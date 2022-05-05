@@ -29,7 +29,7 @@ public class Model {
     ArrayList<String> result = new ArrayList<>();
     try {
       Statement stmt = conn.createStatement();
-      String SQLQuery = "select * from limmuy_meeps";
+      String SQLQuery = "SELECT * FROM limmuy_meeps";
       ResultSet rset = stmt.executeQuery(SQLQuery);
 
       while (rset.next()) {
@@ -41,8 +41,24 @@ public class Model {
 
     } catch (SQLException e) {
       e.printStackTrace();
-      System.err.println("Something went wrong, check your tablestructure...");
+      System.err.println("Something went wrong, unable to get data");
     }
     return result;
+  }
+
+  public void create(String body) {
+    if (body.length() > 3) {
+      try {
+        Statement stmt = conn.createStatement();
+        String SQLUpdate = "INSERT INTO limmuy_meeps (body) VALUES ('" + body + "')";
+        stmt.executeUpdate(SQLUpdate);
+
+      } catch (SQLException e) {
+        e.printStackTrace();
+        System.err.println("Failed to post meep");
+        }
+    } else {
+      System.out.println("Post is too short, atleast 4 letters");
+    }
   }
 }
