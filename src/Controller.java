@@ -38,10 +38,20 @@ public class Controller {
     button.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
-        model.create(view.getPostText().getText());
+        model.createMeep(view.getPostText().getText());
       }
     });
     view.getMainPanel().add(button);
+
+    button = new JButton("Delete");
+    button.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent actionEvent) {
+        model.deleteMeep(view.getIDText().getText());
+      }
+    });
+    view.getMainPanel().add(button);
+
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setResizable(true);

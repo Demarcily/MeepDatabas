@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
+import static java.lang.Integer.parseInt;
 
 public class Model {
   Connection conn;
@@ -46,7 +47,7 @@ public class Model {
     return result;
   }
 
-  public void create(String body) {
+  public void createMeep(String body) {
     if (body.length() > 3) {
       try {
         Statement stmt = conn.createStatement();
@@ -59,6 +60,18 @@ public class Model {
         }
     } else {
       System.out.println("Post is too short, atleast 4 letters");
+    }
+  }
+
+  public void deleteMeep(String idString) {
+    int id = parseInt(idString);
+    try {
+      Statement stmt = conn.createStatement();
+      String SQLDelete = "DELETE FROM limmuy_meeps WHERE id = ('" + id + "')";
+      stmt.executeUpdate(SQLDelete);
+    } catch(SQLException e) {
+      e.printStackTrace();
+      System.err.println("Failed to find meep");
     }
   }
 }

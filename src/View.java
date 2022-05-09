@@ -6,12 +6,18 @@ public class View {
   private JPanel outputpanel;
   private JScrollPane scrollPane;
   private JTextArea postText;
+  private JTextArea IDText;
 
   public View() {
     mainpanel = new JPanel();
     outputpanel = new JPanel();
     postText = new JTextArea();
-    postText.setPreferredSize(new Dimension(50,20));
+    IDText = new JTextArea();
+    postText.setPreferredSize(new Dimension(100,20));
+    postText.setText("Text here");
+    IDText.setPreferredSize(new Dimension(100,20));
+    IDText.setText("ID here");
+
 
     mainpanel.setBackground(new Color(66, 66, 66));
     outputpanel.setPreferredSize(new Dimension(300,500));
@@ -21,6 +27,7 @@ public class View {
     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     mainpanel.add(scrollPane);
     mainpanel.add(postText);
+    mainpanel.add(IDText);
   }
 
   public JPanel getMainPanel() {
@@ -37,6 +44,10 @@ public class View {
 
   public JTextArea getPostText() {
     return postText;
+  }
+
+  public JTextArea getIDText() {
+    return IDText;
   }
 
 
