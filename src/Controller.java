@@ -21,6 +21,7 @@ public class Controller {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
         view.getOutputPanel().removeAll();
+        frame.repaint();
         for (String s : model.getDatabaseContent()){
           outputText = new JTextArea();
           outputText.setText(s);
