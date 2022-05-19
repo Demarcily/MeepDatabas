@@ -74,4 +74,16 @@ public class Model {
       System.err.println("Failed to find meep");
     }
   }
+
+  public void updateMeep(String idString, String meep) {
+    int id = parseInt(idString);
+    try {
+      Statement stmt = conn.createStatement();
+      String SQLDelete = "UPDATE limmuy_meeps SET body = ('" + meep + "') WHERE id = ('" + id + "')";
+      stmt.executeUpdate(SQLDelete);
+    } catch(SQLException e) {
+      e.printStackTrace();
+      System.err.println("Failed to find update meep");
+    }
+  }
 }
