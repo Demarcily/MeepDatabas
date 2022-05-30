@@ -61,7 +61,7 @@ public class Model {
         System.err.println("Failed to post meep");
         }
     } else {
-      System.out.println("Post is too short, atleast 4 letters");
+      JOptionPane.showMessageDialog(null,"Post is too short, atleast 4 letters");
     }
   }
 
