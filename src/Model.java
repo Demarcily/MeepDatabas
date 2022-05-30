@@ -1,9 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 import static java.lang.Integer.parseInt;
 
 public class Model {
+  private JTextArea outputText;
   Connection conn;
 
   public Model() {
@@ -85,5 +87,19 @@ public class Model {
       e.printStackTrace();
       System.err.println("Failed to find update meep");
     }
+  }
+
+  public void fetchData(JPanel outputPanel, JFrame frame) {
+    outputPanel.removeAll();
+    frame.repaint();
+    for (String s : getDatabaseContent()){
+      outputText = new JTextArea();
+      outputText.setText(s);
+      outputText.setEditable(false);
+      outputText.setForeground(Color.WHITE);
+      outputText.setBackground(null);
+      outputPanel.add(outputText);
+    }
+    frame.revalidate();
   }
 }

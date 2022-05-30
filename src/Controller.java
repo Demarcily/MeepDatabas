@@ -8,11 +8,10 @@ public class Controller {
   private View view = new View();
   private JFrame frame;
   private JButton button;
-  private JTextArea outputText;
 
   public Controller() {
     frame = new JFrame();
-    frame.setPreferredSize(new Dimension(800,700));
+    frame.setPreferredSize(new Dimension(900,600));
     frame.add(view.getMainPanel());
 
     //Buttons
@@ -20,17 +19,7 @@ public class Controller {
     button.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
-        view.getOutputPanel().removeAll();
-        frame.repaint();
-        for (String s : model.getDatabaseContent()){
-          outputText = new JTextArea();
-          outputText.setText(s);
-          outputText.setEditable(false);
-          outputText.setForeground(Color.WHITE);
-          outputText.setBackground(null);
-          view.getOutputPanel().add(outputText);
-        }
-        frame.revalidate();
+        model.fetchData(view.getOutputPanel(), frame);
       }
     });
     view.getMainPanel().add(button);
@@ -40,6 +29,7 @@ public class Controller {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
         model.createMeep(view.getPostText().getText());
+        model.fetchData(view.getOutputPanel(), frame);
       }
     });
     view.getMainPanel().add(button);
@@ -49,15 +39,18 @@ public class Controller {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
         model.deleteMeep(view.getIDText().getText());
+        model.fetchData(view.getOutputPanel(), frame);
+
       }
     });
     view.getMainPanel().add(button);
 
-    button = new JButton("Update");
+    button = new JButton("Edit");
     button.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent actionEvent) {
         model.updateMeep(view.getIDText().getText(), view.getPostText().getText());
+        model.fetchData(view.getOutputPanel(), frame);
       }
     });
     view.getMainPanel().add(button);
