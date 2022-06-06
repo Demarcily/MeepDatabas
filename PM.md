@@ -1,28 +1,21 @@
 ### PM - Databas
 #### Liam Murphy
-2022/05/30
+2022/06/06
 
 ### Inledning
-Här beskriver du kortfattat arbetets syfte/mål, arbetssätt, genomförande.
-Vad är det för något du har utvecklat. Vilket problem har ditt projekt syftat på att lösa.
-
+Syftet med detta arbete var för att bli klar med en tidigare uppgift, som involverade att arbeta med databaser. På varje lektion så kom jag på vad jag behövde och spenderade lektionen med att arbeta på det. Jag skapade en koppling till en databas där jag kunde lägga till, ta bort, och ändra meeps.
 
 ### Bakgrund
-I bakgrunden redogör du för projektets delar, här sammanfattar du din arbetsprocess. Beskriv den teknik 
-du har använt och motivera valet av den. Berätta om ditt planeringsarbete. Försök att inte vara 
-värderande, utan redogör för projektet, hur arbetet gick och dina erfarenheterna skriver du om i de 
-följande delarna. Berätta om hur du har testat din produkt.
+Jag började projektet med att skriva en väldigt översiklig text, på README.md, om hur jag ville projektet skulle se ut. För självaste arbetet så kom jag på vad jag ville göra varje lektion och sen arbetade jag med det, om jag inte blev klar så fortsatte jag bara nästa lektion.
+
+#### Verktyg
+För att kunna arbeta med SQL så behövde vi använda oss av "Mysql-connector-java-x.x.xx"
 
 ### Positiva erfarenheter
-Här beskriver du vad som har gått bra i ditt projekt och analyserar varför. Hur ska du kunna upprepa 
-framgången i projektet.
-
+Att skriva SQL kommandon var lätt då jag hade tidigare erfarenheter.
 
 ### Negativa erfarenheter
-Här beskriver du det som du anser har gått mindre bra med ditt projekt och analyserar hur du kan 
-undvika detta i framtida projekt.
-
+På början av projektet så visste jag inte hur man ändrade strukturen på ett GUI, och på grund av att jag inte skapade mina JPanels och JTextAreas med detta i åtanke så var det väldigt svårt att ändra strulturen när jag försökte lära mig hur man gör det. För att undvika detta problem så kommer jag behöva dubblekolla att jag kan det som jag behöver använda.
 
 ### Sammanfattning
-Här redovisar du dina slutsatser, erfarenheter och lärdomar. Reflektera över din produkt och dess/dina 
-utvecklingsmöjligheter. Vad kan vidareutvecklas och finns det utrymme att bygga vidare på projektet.
+Jag blev klar med projeketet och lärde mig lite hur man kopplar java och SQL tillsammans, dock så ser inte UI:n särskilt fin ut. Det finns många sätt man kan förbättra denna projekt, man kan stort förbättra hur projektet ser ut och man skulle även kunna ändra koden så att användaren behöver inte lägga till vilken id som hen vill ändra.
